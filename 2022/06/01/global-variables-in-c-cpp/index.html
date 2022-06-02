@@ -20,26 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"onlyqf.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Life is short, make everyday count!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jason Qi&#39;s Blog">
-<meta property="og:url" content="https://onlyqf.github.io/archives/index.html">
+    <meta name="description" content="一： how to use global variables in c&#x2F;cpp1:在 一个头文件中先声明全局变量，如 header.h 123456789#ifndef HEADER_H#define HEADER_H&#x2F;&#x2F; any source file that includes this will be able to use &quot;global_x&quot;extern i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="global variables in c&#x2F;cpp">
+<meta property="og:url" content="https://onlyqf.github.io/2022/06/01/global-variables-in-c-cpp/index.html">
 <meta property="og:site_name" content="Jason Qi&#39;s Blog">
-<meta property="og:description" content="Life is short, make everyday count!">
+<meta property="og:description" content="一： how to use global variables in c&#x2F;cpp1:在 一个头文件中先声明全局变量，如 header.h 123456789#ifndef HEADER_H#define HEADER_H&#x2F;&#x2F; any source file that includes this will be able to use &quot;global_x&quot;extern i">
 <meta property="og:locale">
+<meta property="article:published_time" content="2022-06-02T02:44:00.000Z">
+<meta property="article:modified_time" content="2022-06-02T14:46:43.279Z">
 <meta property="article:author" content="Jason Qi">
 <meta property="article:tag" content="Jason Blog">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://onlyqf.github.io/archives/">
+<link rel="canonical" href="https://onlyqf.github.io/2022/06/01/global-variables-in-c-cpp/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-Hans","comments":"","permalink":"","path":"archives/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"https://onlyqf.github.io/2022/06/01/global-variables-in-c-cpp/","path":"2022/06/01/global-variables-in-c-cpp/","title":"global variables in c/cpp"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Archive | Jason Qi's Blog</title>
+<title>global variables in c/cpp | Jason Qi's Blog</title>
   
 
 
@@ -69,7 +71,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Jason Qi's Blog</h1>
+      <p class="site-title">Jason Qi's Blog</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">You make yourself great!</p>
@@ -129,7 +131,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -142,6 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%EF%BC%9A-how-to-use-global-variables-in-c-x2F-cpp"><span class="nav-number">1.</span> <span class="nav-text">一： how to use global variables in c&#x2F;cpp</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%EF%BC%9A%E5%87%BD%E6%95%B0%E5%BD%A2%E5%8F%82%E5%92%8C%E5%AE%9E%E5%8F%82%E7%9A%84%E5%B7%AE%E5%88%AB"><span class="nav-number">2.</span> <span class="nav-text">二：函数形参和实参的差别</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -203,89 +206,93 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 3 posts in total. Keep on posting.</span>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://onlyqf.github.io/2022/06/01/global-variables-in-c-cpp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jason Qi">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason Qi's Blog">
+      <meta itemprop="description" content="Life is short, make everyday count!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="global variables in c/cpp | Jason Qi's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          global variables in c/cpp
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+      <time title="Created: 2022-06-02 10:44:00 / Modified: 22:46:43" itemprop="dateCreated datePublished" datetime="2022-06-02T10:44:00+08:00">2022-06-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="一：-how-to-use-global-variables-in-c-x2F-cpp"><a href="#一：-how-to-use-global-variables-in-c-x2F-cpp" class="headerlink" title="一： how to use global variables in c&#x2F;cpp"></a>一： how to use global variables in c&#x2F;cpp</h1><p>1:在 一个头文件中先声明全局变量，如 header.h</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#ifndef HEADER_H</span><br><span class="line">#define HEADER_H</span><br><span class="line"></span><br><span class="line">// any source file that includes this will be able to use &quot;global_x&quot;</span><br><span class="line">extern int global_x;//用extern 声明全局变量 global_x</span><br><span class="line"></span><br><span class="line">void print_global_x();</span><br><span class="line"></span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<p>2：在其他代码文件中使用该全局变量</p>
+<p>1：在source1.cpp中使用<br>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;header.h&quot;//先将头文件包括进来</span><br><span class="line"></span><br><span class="line">// since global_x still needs to be defined somewhere,</span><br><span class="line">// we define it (for example) in this source file</span><br><span class="line">int global_x; </span><br><span class="line">//*在这里定义一次，记住变量可以多次声明但是只能定义一次，因此在这里定义一次后，在其他文件中使用只需要声明不可以再次定义*//</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    //set global_x here:</span><br><span class="line">    global_x = 5;//在这里使用全局变量</span><br><span class="line"></span><br><span class="line">    print_global_x();//在这里使用全局函数</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><br> 2：在source 2中使用全局函数<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &quot;header.h&quot;</span><br><span class="line"></span><br><span class="line">void print_global_x()//在其他文件中定义了该全局函数</span><br><span class="line">&#123;</span><br><span class="line">    //print global_x here:</span><br><span class="line">    std::cout &lt;&lt; global_x &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h1 id="二：函数形参和实参的差别"><a href="#二：函数形参和实参的差别" class="headerlink" title="二：函数形参和实参的差别"></a>二：函数形参和实参的差别</h1><p>只要是声明函数和定义函数的参数都属于形参，只有在主函数中使用的才是实参；<br>在定定义函数或类的时候，只需要参数的类型定义形参；</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-06-02T20:13:38+08:00"
-              content="2022-06-02">
-          06-02
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/06/02/About%20me/" itemprop="url">
-            <span itemprop="name">About me</span>
-          </a>
-      </div>
+    <footer class="post-footer">
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/06/01/ROS2-Notes/" rel="next" title="ROS2 Notes">
+                  ROS2 Notes <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-06-02T10:44:57+08:00"
-              content="2022-06-02">
-          06-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/06/01/ROS2-Notes/" itemprop="url">
-            <span itemprop="name">ROS2 Notes</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-06-02T10:44:00+08:00"
-              content="2022-06-02">
-          06-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/06/01/global-variables-in-c-cpp/" itemprop="url">
-            <span itemprop="name">global variables in c/cpp</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
 
 </div>
   </main>

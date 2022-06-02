@@ -20,26 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"onlyqf.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Life is short, make everyday count!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jason Qi&#39;s Blog">
-<meta property="og:url" content="https://onlyqf.github.io/index.html">
+    <meta name="description" content="一：debugger c++ ros2  in vscodea method to debug a C++ node usign VSCode on ROS2 Foxy (Ubuntu).  Compile your C++ package with the symbols:  12colcon build --symlink-install --cmake-args -DCMAKE_BUILD_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ROS2 Notes">
+<meta property="og:url" content="https://onlyqf.github.io/2022/06/01/ROS2-Notes/index.html">
 <meta property="og:site_name" content="Jason Qi&#39;s Blog">
-<meta property="og:description" content="Life is short, make everyday count!">
+<meta property="og:description" content="一：debugger c++ ros2  in vscodea method to debug a C++ node usign VSCode on ROS2 Foxy (Ubuntu).  Compile your C++ package with the symbols:  12colcon build --symlink-install --cmake-args -DCMAKE_BUILD_">
 <meta property="og:locale">
+<meta property="article:published_time" content="2022-06-02T02:44:57.000Z">
+<meta property="article:modified_time" content="2022-06-02T14:45:29.533Z">
 <meta property="article:author" content="Jason Qi">
 <meta property="article:tag" content="Jason Blog">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://onlyqf.github.io/">
+<link rel="canonical" href="https://onlyqf.github.io/2022/06/01/ROS2-Notes/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-Hans","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-Hans","comments":true,"permalink":"https://onlyqf.github.io/2022/06/01/ROS2-Notes/","path":"2022/06/01/ROS2-Notes/","title":"ROS2 Notes"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Jason Qi's Blog</title>
+<title>ROS2 Notes | Jason Qi's Blog</title>
   
 
 
@@ -69,7 +71,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Jason Qi's Blog</h1>
+      <p class="site-title">Jason Qi's Blog</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">You make yourself great!</p>
@@ -129,7 +131,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -142,6 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%EF%BC%9Adebugger-c-ros2-in-vscode"><span class="nav-number">1.</span> <span class="nav-text">一：debugger c++ ros2  in vscode</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%EF%BC%9A-%E7%BC%96%E5%86%99%E5%8F%91%E5%B8%83%E8%80%85%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81"><span class="nav-number">1.1.</span> <span class="nav-text">1： 编写发布者节点代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%EF%BC%9A%E4%BF%AE%E6%94%B9Cmakelists-txt%E5%92%8CpackageXML%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">2：修改Cmakelists.txt和packageXML文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%EF%BC%9A%E7%AE%80%E5%8D%95%E7%9A%84ros2%E8%AE%A2%E9%98%85%E8%80%85%E8%8A%82%E7%82%B9%E7%9A%84%E6%92%B0%E5%86%99"><span class="nav-number">2.</span> <span class="nav-text">三：简单的ros2订阅者节点的撰写</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%EF%BC%9A%E7%BC%96%E5%86%99%E8%AE%A2%E9%98%85%E8%80%85%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81"><span class="nav-number">2.1.</span> <span class="nav-text">1：编写订阅者节点代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%EF%BC%9A%E4%BF%AE%E6%94%B9Cmakelists-txt%E5%92%8CpackageXML%E6%96%87%E4%BB%B6-1"><span class="nav-number">2.2.</span> <span class="nav-text">2：修改Cmakelists.txt和packageXML文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%EF%BC%9A-%E6%B3%A8%EF%BC%9A"><span class="nav-number">2.3.</span> <span class="nav-text">3： 注：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%EF%BC%9A%E7%BC%96%E5%86%99-srv%E6%96%87%E4%BB%B6%EF%BC%8C%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">四：编写.srv文件，实现服务类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%EF%BC%9A-srv%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="nav-number">3.1.</span> <span class="nav-text">1： srv文件格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%EF%BC%9A%E4%BF%AE%E6%94%B9Cmakelists-txt%E5%92%8CpackageXML%E6%96%87%E4%BB%B6-2"><span class="nav-number">3.2.</span> <span class="nav-text">2：修改Cmakelists.txt和packageXML文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%EF%BC%9A-srv%E8%8A%82%E7%82%B9%E7%9A%84%E4%BB%A3%E7%A0%81%E7%9A%84%E7%BC%96%E5%86%99"><span class="nav-number">3.3.</span> <span class="nav-text">3： srv节点的代码的编写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%EF%BC%9Aclient%E7%AB%AF%E4%BB%A3%E7%A0%81%E7%9A%84%E7%BC%96%E5%86%99"><span class="nav-number">3.4.</span> <span class="nav-text">4：client端代码的编写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%EF%BC%9ACmakelsts-txt%E5%92%8CpackageXML%E6%96%87%E4%BB%B6%E7%9A%84%E4%BF%AE%E6%94%B9"><span class="nav-number">3.5.</span> <span class="nav-text">5：Cmakelsts.txt和packageXML文件的修改</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%EF%BC%9A-msg%E6%96%87%E4%BB%B6%E7%9A%84%E7%BC%96%E5%86%99"><span class="nav-number">4.</span> <span class="nav-text">五：.msg文件的编写</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%EF%BC%9A%E5%9C%A8WS%E4%B8%8Bsrc"><span class="nav-number">4.1.</span> <span class="nav-text">1：在WS下src;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BAmsg%E5%8C%85%EF%BC%8C%E6%96%B0%E5%BB%BAmsg%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">4.2.</span> <span class="nav-text">2:创建msg包，新建msg文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%88%9B%E5%BB%BAmsg%E6%96%87%E4%BB%B6"><span class="nav-number">4.3.</span> <span class="nav-text">3:创建msg文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%EF%BC%9A%E4%BF%AE%E6%94%B9Cmakelists%E5%92%8CpackageXML%E6%96%87%E4%BB%B6"><span class="nav-number">4.4.</span> <span class="nav-text">4：修改Cmakelists和packageXML文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%EF%BC%9A%E5%9C%A8%E5%85%B6%E4%BB%96%E5%8C%85%E9%87%8C%E9%9D%A2%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89msg"><span class="nav-number">4.5.</span> <span class="nav-text">5：在其他包里面使用自定义msg</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%EF%BC%9A%E5%88%9B%E5%BB%BA%E5%8C%85%E4%BE%9D%E8%B5%96%E5%85%B6%E4%BB%96%E5%8C%85%E4%B8%BE%E4%BE%8B"><span class="nav-number">5.</span> <span class="nav-text">六：创建包依赖其他包举例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%EF%BC%9A%E6%96%87%E4%BB%B6%E7%BB%84%E7%BB%87%E5%88%86%E5%B8%83"><span class="nav-number">5.1.</span> <span class="nav-text">1 ：文件组织分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-sm-node-%E5%8C%85%E4%BE%9D%E8%B5%96%E5%85%B6%E4%BB%96%E5%9B%9B%E4%B8%AA%E5%8C%85"><span class="nav-number">5.2.</span> <span class="nav-text">2 :sm_node 包依赖其他四个包</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%83%EF%BC%9Alaunch-%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">七：launch 文件使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%EF%BC%9ACreate-a-new-directory-to-store-your-launch-file"><span class="nav-number">6.1.</span> <span class="nav-text">1：Create a new directory to store your launch file:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%EF%BC%9A%E5%88%9B%E5%BB%BAlaunch-py%E6%96%87%E4%BB%B6"><span class="nav-number">6.2.</span> <span class="nav-text">2：创建launch.py文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%96%87%E4%BB%B6%E8%A7%A3%E9%87%8A"><span class="nav-number">6.3.</span> <span class="nav-text">3:文件解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%EF%BC%9A%E4%BD%BF%E7%94%A8launch%E6%96%87%E4%BB%B6"><span class="nav-number">6.4.</span> <span class="nav-text">4：使用launch文件</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -203,88 +206,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://onlyqf.github.io/2022/06/02/About%20me/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jason Qi">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jason Qi's Blog">
-      <meta itemprop="description" content="Life is short, make everyday count!">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jason Qi's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/02/About%20me/" class="post-title-link" itemprop="url">About me</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-06-02 20:13:38 / Modified: 22:42:44" itemprop="dateCreated datePublished" datetime="2022-06-02T20:13:38+08:00">2022-06-02</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><strong>Name</strong>: Jason Qi 齐飞</p>
-<p><strong>Education</strong>:<br>          2014-2018:  B.S degree from Hohai University,Nanjing,Jiangsu;<br>          2018-2021:  M.S degree from Beijing Institute of Technology,Beijing,China;<br>          2021-now:  currently working in SAIC Motor Co.Ltd,Shanghai,China;</p>
-<p><strong>Reaearch interest</strong>:<br>          autonomous driving vehicle，<br>          motion planning，<br>          ROS2，<br>          computer vision，<br>          deep learning，etc;</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://onlyqf.github.io/2022/06/01/ROS2-Notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -298,13 +230,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jason Qi's Blog">
+      <meta itemprop="name" content="ROS2 Notes | Jason Qi's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/01/ROS2-Notes/" class="post-title-link" itemprop="url">ROS2 Notes</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          ROS2 Notes
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -328,7 +260,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="一：debugger-c-ros2-in-vscode"><a href="#一：debugger-c-ros2-in-vscode" class="headerlink" title="一：debugger c++ ros2  in vscode"></a>一：debugger c++ ros2  in vscode</h1><p>a method to debug a C++ node usign VSCode on ROS2 Foxy (Ubuntu).</p>
+        <h1 id="一：debugger-c-ros2-in-vscode"><a href="#一：debugger-c-ros2-in-vscode" class="headerlink" title="一：debugger c++ ros2  in vscode"></a>一：debugger c++ ros2  in vscode</h1><p>a method to debug a C++ node usign VSCode on ROS2 Foxy (Ubuntu).</p>
 <ol>
 <li>Compile your C++ package with the symbols:</li>
 </ol>
@@ -396,7 +328,6 @@
 
 <h2 id="4：使用launch文件"><a href="#4：使用launch文件" class="headerlink" title="4：使用launch文件"></a>4：使用launch文件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd launch</span><br><span class="line">ros2 launch turtlesim_mimic_launch.py</span><br></pre></td></tr></table></figure>
 
-      
     </div>
 
     
@@ -404,85 +335,25 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/06/01/global-variables-in-c-cpp/" rel="prev" title="global variables in c/cpp">
+                  <i class="fa fa-chevron-left"></i> global variables in c/cpp
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/06/02/About%20me/" rel="next" title="About me">
+                  About me <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://onlyqf.github.io/2022/06/01/global-variables-in-c-cpp/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jason Qi">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jason Qi's Blog">
-      <meta itemprop="description" content="Life is short, make everyday count!">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Jason Qi's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/01/global-variables-in-c-cpp/" class="post-title-link" itemprop="url">global variables in c/cpp</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-06-02 10:44:00 / Modified: 22:46:43" itemprop="dateCreated datePublished" datetime="2022-06-02T10:44:00+08:00">2022-06-02</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="一：-how-to-use-global-variables-in-c-x2F-cpp"><a href="#一：-how-to-use-global-variables-in-c-x2F-cpp" class="headerlink" title="一： how to use global variables in c&#x2F;cpp"></a>一： how to use global variables in c&#x2F;cpp</h1><p>1:在 一个头文件中先声明全局变量，如 header.h</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#ifndef HEADER_H</span><br><span class="line">#define HEADER_H</span><br><span class="line"></span><br><span class="line">// any source file that includes this will be able to use &quot;global_x&quot;</span><br><span class="line">extern int global_x;//用extern 声明全局变量 global_x</span><br><span class="line"></span><br><span class="line">void print_global_x();</span><br><span class="line"></span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-<p>2：在其他代码文件中使用该全局变量</p>
-<p>1：在source1.cpp中使用<br>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;header.h&quot;//先将头文件包括进来</span><br><span class="line"></span><br><span class="line">// since global_x still needs to be defined somewhere,</span><br><span class="line">// we define it (for example) in this source file</span><br><span class="line">int global_x; </span><br><span class="line">//*在这里定义一次，记住变量可以多次声明但是只能定义一次，因此在这里定义一次后，在其他文件中使用只需要声明不可以再次定义*//</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    //set global_x here:</span><br><span class="line">    global_x = 5;//在这里使用全局变量</span><br><span class="line"></span><br><span class="line">    print_global_x();//在这里使用全局函数</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><br> 2：在source 2中使用全局函数<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &quot;header.h&quot;</span><br><span class="line"></span><br><span class="line">void print_global_x()//在其他文件中定义了该全局函数</span><br><span class="line">&#123;</span><br><span class="line">    //print global_x here:</span><br><span class="line">    std::cout &lt;&lt; global_x &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<h1 id="二：函数形参和实参的差别"><a href="#二：函数形参和实参的差别" class="headerlink" title="二：函数形参和实参的差别"></a>二：函数形参和实参的差别</h1><p>只要是声明函数和定义函数的参数都属于形参，只有在主函数中使用的才是实参；<br>在定定义函数或类的时候，只需要参数的类型定义形参；</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
