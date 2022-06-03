@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>About me</title>
+    <title>About Me</title>
     <url>/2022/06/02/About%20me/</url>
     <content><![CDATA[<p><strong>Name</strong>: Jason Qi 齐飞</p>
-<p><strong>Education</strong>:<br>          2014-2018:  B.S degree from Hohai University,Nanjing,Jiangsu;<br>          2018-2021:  M.S degree from Beijing Institute of Technology,Beijing,China;<br>          2021-now:  currently working in SAIC Motor Co.Ltd,Shanghai,China;</p>
-<p><strong>Reaearch interest</strong>:<br>          autonomous driving vehicle，<br>          motion planning，<br>          ROS2，<br>          computer vision，<br>          deep learning，etc;</p>
+<p><strong>Education</strong>:<br>          ① 2014-2018:  B.S degree from Hohai University,Nanjing,Jiangsu;<br>          ② 2018-2021:  M.S degree from Beijing Institute of Technology,Beijing,China;<br>          ③ 2021-now:  currently working in SAIC Motor Co.Ltd,Shanghai,China;</p>
+<p><strong>Reaearch interest</strong>:<br>          Autonomous driving vehicle，<br>          Motion planning，<br>          ROS2，<br>          Computer vision，<br>          Deep learning，etc;</p>
+<p><strong>Publication</strong>:<br>         ① Qi, F., et al. “Head pose and eye gaze feature recognition based prediction of drivers’ maneuvers.” CSAA&#x2F;IET International Conference on Aircraft Utility Systems (AUS 2020). Vol. 2020. IET, 2020.<br>         ② Qi, Fei, et al. “A Discrete Operational Point Control-based Adaptive Dynamic Coordination Control Strategy for HEV.” 2021 IEEE 10th Data Driven Control and Learning Systems Conference (DDCLS). IEEE, 2021.</p>
 ]]></content>
   </entry>
   <entry>
