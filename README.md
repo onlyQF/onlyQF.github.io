@@ -1,0 +1,2 @@
+# onlyQF.github.io
+https://objects.githubusercontent.com/github-production-release-asset-2e65be/136815833/46e86a80-0981-11eb-82b0-32030654cd3b?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20220707%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220707T054537Z&X-Amz-Expires=300&X-Amz-Signature=c4b6a4ba410409774874e5cd1ca5b3aa635f6588bfd09ad6ae78998985f6ba61&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=136815833&response-content-disposition=attachment%3B%20filename%3Dclash-linux-amd64-v1.2.0.gz&response-content-type=application%2Foctet-stream
